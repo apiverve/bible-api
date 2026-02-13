@@ -29,14 +29,7 @@ namespace APIVerve.Examples
                 using var client = new HttpClient();
                 client.DefaultRequestHeaders.Add("x-api-key", API_KEY);
 
-                // Query parameters
-                var queryParams &#x3D; new Dictionary&lt;string, string&gt; { [&quot;book&quot;] &#x3D; &quot;Genesis&quot;, [&quot;chapter&quot;] &#x3D; 5, [&quot;verse&quot;] &#x3D; 17 };
-
-                var queryString = string.Join("&",
-                    queryParams.Select(kvp => $"{kvp.Key}={Uri.EscapeDataString(kvp.Value)}"));
-                var url = $"{API_URL}?{queryString}";
-
-                var response = await client.GetAsync(url);
+                var response = await client.GetAsync(API_URL);
 
                 // Check if response is successful
                 response.EnsureSuccessStatusCode();
