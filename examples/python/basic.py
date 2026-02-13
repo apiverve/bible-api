@@ -17,14 +17,11 @@ def call_bible_api():
     Make a GET request to the Bible API
     """
     try:
-        # Query parameters
-        params &#x3D; {&#x27;book&#x27;: &#x27;Genesis&#x27;, &#x27;chapter&#x27;: 5, &#x27;verse&#x27;: 17}
-
         headers = {
             'x-api-key': API_KEY
         }
 
-        response = requests.get(API_URL, headers=headers, params=params)
+        response = requests.get(API_URL, headers=headers)
 
         # Raise exception for HTTP errors
         response.raise_for_status()
