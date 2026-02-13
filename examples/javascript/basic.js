@@ -13,14 +13,7 @@ const API_URL = 'https://api.apiverve.com/v1/bible';
  */
 async function callBibleAPI() {
   try {
-    // Query parameters
-    const params &#x3D; new URLSearchParams({
-            book: &#x27;Genesis&#x27;,
-            chapter: 5,
-            verse: 17
-        });
-
-    const response = await fetch(`${API_URL}?${params}`, {
+    const response = await fetch(API_URL, {
       method: 'GET',
       headers: {
         'x-api-key': API_KEY
