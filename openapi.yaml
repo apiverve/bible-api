@@ -1,46 +1,48 @@
 openapi: 3.0.4
 info:
   title: Bible
-  description: Bible is a simple tool for getting bible verses. Simply provide the book, chapter, and verse, and the API will return the verse.
+  description: >-
+    Bible is a simple tool for getting bible verses. Simply provide the book,
+    chapter, and verse, and the API will return the verse.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/bible:
     get:
       summary: Get Bible Verse
-      description: Bible is a simple tool for getting bible verses. Simply provide the book, chapter, and verse, and the API will return the verse.
+      description: Get a bible chapter or verse based on the book, chapter, and or verse
       operationId: bible
       parameters:
-      - name: book
-        in: query
-        schema:
-          type: string
-        required: true
-        description: The name of the book in the bible (e.g., Genesis)
-        example: Genesis
-      - name: chapter
-        in: query
-        schema:
-          type: integer
-        required: true
-        description: The chapter number in the book
-        example: '5'
-      - name: verse
-        in: query
-        schema:
-          type: integer
-        required: false
-        description: The verse number in the chapter
-        example: '17'
+        - name: book
+          in: query
+          schema:
+            type: string
+          required: true
+          description: The name of the book in the bible (e.g., Genesis)
+          example: Genesis
+        - name: chapter
+          in: query
+          schema:
+            type: integer
+          required: true
+          description: The chapter number in the book
+          example: 5
+        - name: verse
+          in: query
+          schema:
+            type: integer
+          required: false
+          description: The verse number in the chapter
+          example: 17
       responses:
         '200':
           description: Successful Response
@@ -56,25 +58,28 @@ paths:
                     type: string
                     description: error
                   data:
-                    type: string
+                    type: object
                     description: data
               example:
                 status: ok
-                error: 
+                error: null
                 data:
-                  text: But with thee will I establish my covenant; and thou shalt come into the ark, thou, and thy sons, and thy wife, and thy sons' wives with thee.
+                  text: >-
+                    But with thee will I establish my covenant; and thou shalt
+                    come into the ark, thou, and thy sons, and thy wife, and thy
+                    sons' wives with thee.
                   book: Genesis
                   abbr: gn
                   chapter: 5
                   verses:
-                  - 17
+                    - 17
                   version: KJV
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
 components:
   securitySchemes:
     api_key:
@@ -82,4 +87,4 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
