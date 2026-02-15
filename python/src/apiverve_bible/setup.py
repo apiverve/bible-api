@@ -10,20 +10,14 @@ if os.path.exists(requirements_file):
 
 setup(
     name='apiverve_bible',
-    version='1.1.12',
+    version='1.1.13',
     packages=find_packages(),
     include_package_data=True,
     install_requires=install_requires,
     description='Bible is a simple tool for getting bible verses. Simply provide the book, chapter, and verse, and the API will return the verse.',
     author='APIVerve',
     author_email='hello@apiverve.com',
-    url='https://apiverve.com',
-    project_urls={
-        'Homepage': 'https://apiverve.com',
-        'Documentation': 'https://docs.apiverve.com/ref/bible',
-        'Source': 'https://github.com/apiverve/bible-api',
-        'Bug Tracker': 'https://github.com/apiverve/bible-api/issues'
-    },
+    url='https://apiverve.com/marketplace/bible?utm_source=pypi&utm_medium=homepage',
     classifiers=[
         'Programming Language :: Python :: 3',
         'Operating System :: OS Independent',
