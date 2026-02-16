@@ -44,7 +44,11 @@ from apiverve_bible.apiClient import BibleAPIClient
 # Initialize the client with your APIVerve API key
 api = BibleAPIClient("[YOUR_API_KEY]")
 
-query = { "book": "Genesis", "chapter": 5, "verse": 17 }
+query = {
+    "book": "Genesis",
+    "chapter": 5,
+    "verse": 17
+}
 
 try:
     # Make the API call
@@ -82,7 +86,11 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "book": "Genesis", "chapter": 5, "verse": 17 }
+query = {
+    "book": "Genesis",
+    "chapter": 5,
+    "verse": 17
+}
 ```
 
 ###### Simple Request
@@ -127,7 +135,11 @@ from apiverve_bible.apiClient import BibleAPIClient, BibleAPIClientError
 
 api = BibleAPIClient("[YOUR_API_KEY]")
 
-query = { "book": "Genesis", "chapter": 5, "verse": 17 }
+query = {
+    "book": "Genesis",
+    "chapter": 5,
+    "verse": 17
+}
 
 try:
     result = api.execute(query)
@@ -148,7 +160,11 @@ from apiverve_bible.apiClient import BibleAPIClient, BibleAPIClientError
 
 api = BibleAPIClient("[YOUR_API_KEY]")
 
-query = { "book": "Genesis", "chapter": 5, "verse": 17 }
+query = {
+    "book": "Genesis",
+    "chapter": 5,
+    "verse": 17
+}
 
 try:
     result = api.execute(query)
@@ -182,7 +198,11 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_bible.apiClient import BibleAPIClient, BibleAPIClientError
 
-query = { "book": "Genesis", "chapter": 5, "verse": 17 }
+query = {
+    "book": "Genesis",
+    "chapter": 5,
+    "verse": 17
+}
 
 # Using context manager ensures proper cleanup
 with BibleAPIClient("[YOUR_API_KEY]") as api:
@@ -208,7 +228,11 @@ from apiverve_bible.apiClient import BibleAPIClient
 # Enable debug mode
 api = BibleAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "book": "Genesis", "chapter": 5, "verse": 17 }
+query = {
+    "book": "Genesis",
+    "chapter": 5,
+    "verse": 17
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -223,8 +247,13 @@ from apiverve_bible.apiClient import BibleAPIClient
 
 api = BibleAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "book": "Genesis",
+    "chapter": 5,
+    "verse": 17
+}
+
 try:
-    query = { "book": "Genesis", "chapter": 5, "verse": 17 }
     result = api.execute(query)
     print(result)
 finally:
