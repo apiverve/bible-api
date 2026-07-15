@@ -16,6 +16,7 @@ const api = new bibleAPI({
 // Example query
 var query = {
   book: "Genesis",
+  version: "KJV",
   chapter: 5,
   verse: 17
 };
