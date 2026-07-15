@@ -29,6 +29,13 @@ paths:
           required: true
           description: The name of the book in the bible (e.g., Genesis)
           example: Genesis
+        - name: version
+          in: query
+          schema:
+            type: string
+          required: true
+          description: The Bible translation version
+          example: KJV
         - name: chapter
           in: query
           schema:
@@ -70,10 +77,15 @@ paths:
                     sons' wives with thee.
                   book: Genesis
                   abbr: gn
-                  chapter: 5
+                  chapter: 6
                   verses:
-                    - 17
+                    - 18
                   version: KJV
+                  testament: Old Testament
+                  bookNumber: 1
+                  totalChapters: 50
+                  totalVersesInChapter: 22
+                  wordCount: 29
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
