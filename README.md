@@ -1,13 +1,13 @@
-# [Bible API](https://apiverve.com/marketplace/bible?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Bible API](https://bible.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
 
 Bible is a simple tool for getting bible verses. Simply provide the book, chapter, and verse, and the API will return the verse.
 
 The Bible API provides a simple, reliable way to integrate bible functionality into your applications. Built for developers who need production-ready bible capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/bible?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://bible.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/bible?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://bible.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -30,7 +30,14 @@ The Bible API provides a simple, reliable way to integrate bible functionality i
 ```javascript
 async function callBibleAPI() {
     try {
-        const response = await fetch('https://api.apiverve.com/v1/bible', {
+        const params = new URLSearchParams({
+            book: 'Genesis',
+            version: 'KJV',
+            chapter: 5,
+            verse: 17
+        });
+
+        const response = await fetch(`https://api.apiverve.com/v1/bible?${params}`, {
             method: 'GET',
             headers: {
                 'x-api-key': 'YOUR_API_KEY_HERE'
@@ -50,7 +57,7 @@ callBibleAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/bible?param=value" \
+curl -X GET "https://api.apiverve.com/v1/bible?book=Genesis&version=KJV&chapter=5&verse=17" \
   -H "x-api-key: YOUR_API_KEY_HERE"
 ```
 
@@ -150,14 +157,14 @@ go get github.com/apiverve/bible-api/go
 |---------|---------|
 | **Multi-language SDKs** | Native packages for JavaScript, Python, C#, Go, and Android |
 | **Simple Integration** | Single API key authentication, consistent response format |
-| **Production Ready** | 99.9% uptime, fast response times, used by thousands of developers |
+| **Production Ready** | 99.9% uptime SLA, served from 24 global regions |
 | **Comprehensive Docs** | Full examples, OpenAPI spec, and dedicated support |
 
 ---
 
 ## Documentation
 
-- 🏠 **API Home:** [Bible API](https://apiverve.com/marketplace/bible?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Bible API](https://bible.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/bible](https://docs.apiverve.com/ref/bible)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -169,7 +176,7 @@ go get github.com/apiverve/bible-api/go
 The Bible API is commonly used for:
 
 - **Web Applications** - Add bible features to your frontend or backend
-- **Mobile Apps** - Native SDKs for iOS and Android development
+- **Mobile Apps** - Native SDKs for Android development
 - **Automation** - Integrate with n8n, Zapier, or custom workflows
 - **SaaS Products** - Enhance your product with bible capabilities
 - **Data Pipelines** - Process and analyze data at scale
@@ -199,7 +206,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Bible API](https://apiverve.com/marketplace/bible?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Bible API](https://bible.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)
