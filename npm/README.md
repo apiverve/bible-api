@@ -7,7 +7,7 @@ Bible is a simple tool for getting bible verses. Simply provide the book, chapte
 ![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 [![npm version](https://img.shields.io/npm/v/@apiverve/bible.svg)](https://www.npmjs.com/package/@apiverve/bible)
 
-This is a Javascript Wrapper for the [Bible API](https://apiverve.com/marketplace/bible?utm_source=npm&utm_medium=readme)
+This is a Javascript Wrapper for the [Bible API](https://bible.apiverve.com?utm_source=npm&utm_medium=readme)
 
 ---
 
@@ -61,6 +61,7 @@ Using the API is simple. All you have to do is make a request. The API will retu
 ```javascript
 var query = {
   book: "Genesis",
+  version: "KJV",
   chapter: 5,
   verse: 17
 };
@@ -83,6 +84,7 @@ You can also use promises to make requests. The API returns a promise that you c
 ```javascript
 var query = {
   book: "Genesis",
+  version: "KJV",
   chapter: 5,
   verse: 17
 };
@@ -106,6 +108,7 @@ You can also use async/await to make requests. The API returns a promise that yo
 async function makeRequest() {
     var query = {
   book: "Genesis",
+  version: "KJV",
   chapter: 5,
   verse: 17
 };
@@ -131,11 +134,16 @@ async function makeRequest() {
     "text": "But with thee will I establish my covenant; and thou shalt come into the ark, thou, and thy sons, and thy wife, and thy sons' wives with thee.",
     "book": "Genesis",
     "abbr": "gn",
-    "chapter": 5,
+    "chapter": 6,
     "verses": [
-      17
+      18
     ],
-    "version": "KJV"
+    "version": "KJV",
+    "testament": "Old Testament",
+    "bookNumber": 1,
+    "totalChapters": 50,
+    "totalVersesInChapter": 22,
+    "wordCount": 29
   }
 }
 ```
