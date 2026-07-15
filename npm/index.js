@@ -30,7 +30,7 @@ class bibleWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/bible';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"book":{"type":"string","required":true},"chapter":{"type":"integer","required":true,"min":1},"verse":{"type":"integer","required":false,"min":1}};
+        this.validationRules = {"book":{"type":"string","required":true},"version":{"type":"string","required":true},"chapter":{"type":"integer","required":true,"min":1},"verse":{"type":"integer","required":false,"min":1}};
     }
 
     /**
