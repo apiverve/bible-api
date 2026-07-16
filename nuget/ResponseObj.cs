@@ -25,6 +25,9 @@ namespace APIVerve.API.Bible
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -39,12 +42,39 @@ namespace APIVerve.API.Bible
         public string Abbr { get; set; }
 
         [JsonProperty("chapter")]
-        public long Chapter { get; set; }
+        public long? Chapter { get; set; }
 
         [JsonProperty("verses")]
-        public long[] Verses { get; set; }
+        public long?[] Verses { get; set; }
 
         [JsonProperty("version")]
         public string Version { get; set; }
+
+        [JsonProperty("testament")]
+        public string Testament { get; set; }
+
+        [JsonProperty("bookNumber")]
+        public long? BookNumber { get; set; }
+
+        [JsonProperty("totalChapters")]
+        public long? TotalChapters { get; set; }
+
+        [JsonProperty("totalVersesInChapter")]
+        public long? TotalVersesInChapter { get; set; }
+
+        [JsonProperty("wordCount")]
+        public long? WordCount { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
