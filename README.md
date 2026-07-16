@@ -194,11 +194,40 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Bible API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "text": "But with thee will I establish my covenant; and thou shalt come into the ark, thou, and thy sons, and thy wife, and thy sons' wives with thee.",
+    "book": "Genesis",
+    "abbr": "gn",
+    "chapter": 6,
+    "verses": [
+      18
+    ],
+    "version": "KJV",
+    "testament": "Old Testament",
+    "bookNumber": 1,
+    "totalChapters": 50,
+    "totalVersesInChapter": 22,
+    "wordCount": 29
+  }
 }
 ```
 
