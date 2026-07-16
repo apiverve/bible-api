@@ -7,7 +7,7 @@ Bible is a simple tool for getting bible verses. Simply provide the book, chapte
 ![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
 ![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a .NET Wrapper for the [Bible API](https://apiverve.com/marketplace/bible?utm_source=nuget&utm_medium=readme)
+This is a .NET Wrapper for the [Bible API](https://bible.apiverve.com?utm_source=nuget&utm_medium=readme)
 
 ---
 
@@ -51,7 +51,7 @@ Here's a simple example to get you started quickly:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.Bible;
 
 class Program
 {
@@ -60,10 +60,11 @@ class Program
         // Initialize the API client
         var apiClient = new BibleAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    book = "Genesis",
-    chapter = 5,
-    verse = 17
+        var queryOptions = new BibleQueryOptions {
+    Book = "Genesis",
+    Version = "KJV",
+    Chapter = 5,
+    Verse = 17
 };
 
         // Make the API call
@@ -118,7 +119,7 @@ The modern async/await pattern provides the best performance and code readabilit
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.Bible;
 
 public class Example
 {
@@ -126,10 +127,11 @@ public class Example
     {
         var apiClient = new BibleAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    book = "Genesis",
-    chapter = 5,
-    verse = 17
+        var queryOptions = new BibleQueryOptions {
+    Book = "Genesis",
+    Version = "KJV",
+    Chapter = 5,
+    Verse = 17
 };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -152,7 +154,7 @@ If you need to use synchronous code, you can use the `Execute` method:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.Bible;
 
 public class Example
 {
@@ -160,10 +162,11 @@ public class Example
     {
         var apiClient = new BibleAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    book = "Genesis",
-    chapter = 5,
-    verse = 17
+        var queryOptions = new BibleQueryOptions {
+    Book = "Genesis",
+    Version = "KJV",
+    Chapter = 5,
+    Verse = 17
 };
 
         var response = apiClient.Execute(queryOptions);
@@ -191,7 +194,7 @@ The API client provides comprehensive error handling. Here are some examples:
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.Bible;
 
 public class Example
 {
@@ -199,10 +202,11 @@ public class Example
     {
         var apiClient = new BibleAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    book = "Genesis",
-    chapter = 5,
-    verse = 17
+        var queryOptions = new BibleQueryOptions {
+    Book = "Genesis",
+    Version = "KJV",
+    Chapter = 5,
+    Verse = 17
 };
 
         try
@@ -245,7 +249,7 @@ public class Example
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.Bible;
 
 public class Example
 {
@@ -257,10 +261,11 @@ public class Example
         apiClient.SetMaxRetries(3);        // Retry up to 3 times (default: 0, max: 3)
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
-        var queryOptions = new QueryOptions {
-    book = "Genesis",
-    chapter = 5,
-    verse = 17
+        var queryOptions = new BibleQueryOptions {
+    Book = "Genesis",
+    Version = "KJV",
+    Chapter = 5,
+    Verse = 17
 };
 
         try
@@ -300,10 +305,11 @@ var apiClient = new BibleAPIClient("[YOUR_API_KEY]");
 apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
-var queryOptions = new QueryOptions {
-    book = "Genesis",
-    chapter = 5,
-    verse = 17
+var queryOptions = new BibleQueryOptions {
+    Book = "Genesis",
+    Version = "KJV",
+    Chapter = 5,
+    Verse = 17
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -328,10 +334,11 @@ apiClient.SetLogger(message =>
     Console.WriteLine($"[LOG] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {message}");
 });
 
-var queryOptions = new QueryOptions {
-    book = "Genesis",
-    chapter = 5,
-    verse = 17
+var queryOptions = new BibleQueryOptions {
+    Book = "Genesis",
+    Version = "KJV",
+    Chapter = 5,
+    Verse = 17
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -348,10 +355,11 @@ var apiClient = new BibleAPIClient("[YOUR_API_KEY]");
 apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3)
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
-var queryOptions = new QueryOptions {
-    book = "Genesis",
-    chapter = 5,
-    verse = 17
+var queryOptions = new BibleQueryOptions {
+    Book = "Genesis",
+    Version = "KJV",
+    Chapter = 5,
+    Verse = 17
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -362,10 +370,11 @@ var response = await apiClient.ExecuteAsync(queryOptions);
 The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
-var queryOptions = new QueryOptions {
-    book = "Genesis",
-    chapter = 5,
-    verse = 17
+var queryOptions = new BibleQueryOptions {
+    Book = "Genesis",
+    Version = "KJV",
+    Chapter = 5,
+    Verse = 17
 };
 
 using (var apiClient = new BibleAPIClient("[YOUR_API_KEY]"))
@@ -388,11 +397,16 @@ using (var apiClient = new BibleAPIClient("[YOUR_API_KEY]"))
     "text": "But with thee will I establish my covenant; and thou shalt come into the ark, thou, and thy sons, and thy wife, and thy sons' wives with thee.",
     "book": "Genesis",
     "abbr": "gn",
-    "chapter": 5,
+    "chapter": 6,
     "verses": [
-      17
+      18
     ],
-    "version": "KJV"
+    "version": "KJV",
+    "testament": "Old Testament",
+    "bookNumber": 1,
+    "totalChapters": 50,
+    "totalVersesInChapter": 22,
+    "wordCount": 29
   }
 }
 ```
