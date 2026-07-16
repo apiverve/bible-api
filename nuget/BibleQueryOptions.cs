@@ -17,15 +17,21 @@ namespace APIVerve.API.Bible
         public string Book { get; set; }
 
         /// <summary>
+        /// The Bible translation version
+        /// </summary>
+        [JsonProperty("version")]
+        public string Version { get; set; }
+
+        /// <summary>
         /// The chapter number in the book
         /// </summary>
         [JsonProperty("chapter")]
-        public string Chapter { get; set; }
+        public int Chapter { get; set; }
 
         /// <summary>
         /// The verse number in the chapter
         /// </summary>
         [JsonProperty("verse")]
-        public string Verse { get; set; }
+        public int? Verse { get; set; }
     }
 }
