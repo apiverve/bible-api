@@ -2,8 +2,10 @@ openapi: 3.0.4
 info:
   title: Bible
   description: >-
-    Bible is a simple tool for getting bible verses. Simply provide the book,
-    chapter, and verse, and the API will return the verse.
+    Bible retrieves scripture passages and verses across nine public-domain
+    translations, including the modern Berean Standard Bible (BSB), KJV, ASV,
+    YLT and Darby. Supply a book, chapter, and optional verse number to get the
+    text with testament classification, word count, and chapter totals.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -18,7 +20,7 @@ servers:
 paths:
   /v1/bible:
     get:
-      summary: Get Bible Verse
+      summary: Bible
       description: Get a bible chapter or verse based on the book, chapter, and or verse
       operationId: bible
       parameters:
