@@ -1,6 +1,6 @@
 import re
-from typing import Dict, Optional, Any
-from dataclasses import dataclass, List
+from typing import Dict, Optional, Any, List
+from dataclasses import dataclass
 import requests
 
 
@@ -25,6 +25,7 @@ class BibleAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
         "book": {"type": "string", "required": True},
+        "version": {"type": "string", "required": True},
         "chapter": {"type": "integer", "required": True, "min": 1},
         "verse": {"type": "integer", "required": False, "min": 1}
     }
