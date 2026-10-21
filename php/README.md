@@ -1,6 +1,6 @@
 # Bible API - PHP Package
 
-Bible is a simple tool for getting bible verses. Simply provide the book, chapter, and verse, and the API will return the verse.
+Bible retrieves scripture passages and verses across nine public-domain translations, including the modern Berean Standard Bible (BSB), KJV, ASV, YLT and Darby. Supply a book, chapter, and optional verse number to get the text with testament classification, word count, and chapter totals.
 
 ## Installation
 
@@ -98,11 +98,11 @@ $client = new Client(
 
 ## Documentation
 
-For more information, visit the [API Documentation](https://docs.apiverve.com/ref/bible?utm_source=packagist&utm_medium=readme).
+For more information, visit the [API Documentation](https://docs.apiverve.com/ref/bible?utm_source=packagist&utm_medium=referral&utm_content=readme).
 
 ## Support
 
-- Website: [https://bible.apiverve.com?utm_source=php&utm_medium=readme](https://bible.apiverve.com?utm_source=php&utm_medium=readme)
+- Website: [https://apiverve.com/marketplace/bible?utm_source=php&utm_medium=referral&utm_content=readme](https://apiverve.com/marketplace/bible?utm_source=php&utm_medium=referral&utm_content=readme)
 - Email: hello@apiverve.com
 
 ## License
