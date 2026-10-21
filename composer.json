@@ -1,7 +1,7 @@
 {
     "name": "apiverve/bible",
-    "description": "Bible is a simple tool for getting bible verses. Simply provide the book, chapter, and verse, and the API will return the verse.",
-    "version": "1.2.0",
+    "description": "Bible retrieves scripture passages and verses across nine public-domain translations, including the modern Berean Standard Bible (BSB), KJV, ASV, YLT and Darby. Supply a book, chapter, and optional verse number to get the text with testament classification, word count, and chapter totals.",
+    "version": "1.2.2",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -15,13 +15,13 @@
         "api",
         "apiverve",
         "bible",
-        "bible",
-        "bible verse",
         "bible api",
-        "bible tool",
-        "bible software"
+        "free bible api",
+        "bible verse api",
+        "bible api key",
+        "scripture api"
     ],
-    "homepage": "https://bible.apiverve.com?utm_source=php&utm_medium=homepage",
+    "homepage": "https://apiverve.com/marketplace/bible?utm_source=php&utm_medium=referral&utm_content=homepage",
     "support": {
         "email": "hello@apiverve.com",
         "docs": "https://docs.apiverve.com/ref/bible",
