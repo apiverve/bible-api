@@ -4,6 +4,6 @@ require_relative "apiverve_bible/client"
 
 module APIVerve
   module Bible
-    VERSION = "1.2.2"
+    VERSION = "1.2.3"
   end
 end
