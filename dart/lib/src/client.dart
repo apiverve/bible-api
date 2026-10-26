@@ -46,10 +46,11 @@ final _formatPatterns = {
 
 /// Bible API client.
 ///
-/// For more information, visit: https://apiverve.com/marketplace/bible?utm_source=dart&utm_medium=readme
+/// For more information, visit: https://apiverve.com/marketplace/bible?utm_source=dart&utm_medium=referral&utm_content=readme
 ///
 /// Parameters:
 /// * [book] (required) - The name of the book in the bible (e.g., Genesis)
+/// * [version] (required) - The Bible translation version
 /// * [chapter] (required) - The chapter number in the book [min: 1]
 /// * [verse] - The verse number in the chapter [min: 1]
 class BibleClient {
@@ -60,6 +61,7 @@ class BibleClient {
   /// Validation rules for parameters.
   static final Map<String, ValidationRule> _validationRules = <String, ValidationRule>{
     'book': ValidationRule(type: 'string', required: true),
+    'version': ValidationRule(type: 'string', required: true),
     'chapter': ValidationRule(type: 'integer', required: true, min: 1),
     'verse': ValidationRule(type: 'integer', required: false, min: 1),
   };

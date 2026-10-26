@@ -1,7 +1,7 @@
 name: apiverve_bible
-description: Bible is a simple tool for getting bible verses. Simply provide the book, chapter, and verse, and the API will return the verse.
-version: 1.1.14
-homepage: https://apiverve.com/marketplace/bible?utm_source=dart&utm_medium=homepage
+description: "Bible retrieves scripture passages and verses across nine public-domain translations, including the modern Berean Standard Bible (BSB), KJV, ASV, YLT and Darby. Supply a book, chapter, and optional verse number to get the text with testament classification, word count, and chapter totals."
+version: 1.2.3
+homepage: https://apiverve.com/marketplace/bible?utm_source=dart&utm_medium=referral&utm_content=homepage
 repository: https://github.com/apiverve/bible-api/tree/main/dart
 
 environment:
