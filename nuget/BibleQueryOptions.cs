@@ -11,7 +11,7 @@ namespace APIVerve.API.Bible
     public class BibleQueryOptions
     {
         /// <summary>
-        /// The name of the book in the bible (e.g., Genesis)
+        /// The name of the book in the bible (e.g., Genesis). Abbreviations such as Gen, Ps, 1 Cor or Jn are accepted
         /// </summary>
         [JsonProperty("book")]
         public string Book { get; set; }
@@ -33,5 +33,11 @@ namespace APIVerve.API.Bible
         /// </summary>
         [JsonProperty("verse")]
         public int? Verse { get; set; }
+
+        /// <summary>
+        /// Last verse of a range starting at verse (e.g., verse=16&verseEnd=18). A value past the end of the chapter returns the rest of it
+        /// </summary>
+        [JsonProperty("verseEnd")]
+        public int? VerseEnd { get; set; }
     }
 }

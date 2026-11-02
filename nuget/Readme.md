@@ -1,7 +1,7 @@
 Bible API
 ============
 
-Bible retrieves scripture passages and verses across nine public-domain translations, including the modern Berean Standard Bible (BSB), KJV, ASV, YLT and Darby. Supply a book, chapter, and optional verse number to get the text with testament classification, word count, and chapter totals.
+Bible retrieves scripture passages and verses across nine public-domain translations, including the modern Berean Standard Bible (BSB), KJV, ASV, YLT and Darby. Look up a book, chapter and verse range or a written reference like Jn 3:16-18, search for words and phrases, get a random verse or the verse of the day, and step to the previous or next passage.
 
 
 [![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.Bible.svg)](https://www.nuget.org/packages/APIVerve.API.Bible)
@@ -63,7 +63,8 @@ class Program
             Book = "Genesis",
             Version = "KJV",
             Chapter = 5,
-            Verse = 17
+            Verse = 17,
+            VerseEnd = 18
         };
 
         // Make the API call
@@ -130,7 +131,8 @@ public class Example
             Book = "Genesis",
             Version = "KJV",
             Chapter = 5,
-            Verse = 17
+            Verse = 17,
+            VerseEnd = 18
         };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -165,7 +167,8 @@ public class Example
             Book = "Genesis",
             Version = "KJV",
             Chapter = 5,
-            Verse = 17
+            Verse = 17,
+            VerseEnd = 18
         };
 
         var response = apiClient.Execute(queryOptions);
@@ -205,7 +208,8 @@ public class Example
             Book = "Genesis",
             Version = "KJV",
             Chapter = 5,
-            Verse = 17
+            Verse = 17,
+            VerseEnd = 18
         };
 
         try
@@ -264,7 +268,8 @@ public class Example
             Book = "Genesis",
             Version = "KJV",
             Chapter = 5,
-            Verse = 17
+            Verse = 17,
+            VerseEnd = 18
         };
 
         try
@@ -308,7 +313,8 @@ var queryOptions = new BibleQueryOptions {
     Book = "Genesis",
     Version = "KJV",
     Chapter = 5,
-    Verse = 17
+    Verse = 17,
+    VerseEnd = 18
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -337,7 +343,8 @@ var queryOptions = new BibleQueryOptions {
     Book = "Genesis",
     Version = "KJV",
     Chapter = 5,
-    Verse = 17
+    Verse = 17,
+    VerseEnd = 18
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -358,7 +365,8 @@ var queryOptions = new BibleQueryOptions {
     Book = "Genesis",
     Version = "KJV",
     Chapter = 5,
-    Verse = 17
+    Verse = 17,
+    VerseEnd = 18
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -373,7 +381,8 @@ var queryOptions = new BibleQueryOptions {
     Book = "Genesis",
     Version = "KJV",
     Chapter = 5,
-    Verse = 17
+    Verse = 17,
+    VerseEnd = 18
 };
 
 using (var apiClient = new BibleAPIClient("[YOUR_API_KEY]"))
@@ -393,19 +402,45 @@ using (var apiClient = new BibleAPIClient("[YOUR_API_KEY]"))
   "status": "ok",
   "error": null,
   "data": {
-    "text": "But with thee will I establish my covenant; and thou shalt come into the ark, thou, and thy sons, and thy wife, and thy sons' wives with thee.",
+    "text": "But with thee will I establish my covenant; and thou shalt come into the ark, thou, and thy sons, and thy wife, and thy sons’ wives with thee. And of every living thing of all flesh, two of every sort shalt thou bring into the ark, to keep them alive with thee; they shall be male and female.",
     "book": "Genesis",
-    "abbr": "gn",
+    "abbr": "Ge",
     "chapter": 6,
     "verses": [
-      18
+      18,
+      19
     ],
     "version": "KJV",
     "testament": "Old Testament",
     "bookNumber": 1,
     "totalChapters": 50,
     "totalVersesInChapter": 22,
-    "wordCount": 29
+    "wordCount": 58,
+    "reference": "Genesis 6:18-19",
+    "passage": [
+      {
+        "chapter": 6,
+        "verse": 18,
+        "text": "But with thee will I establish my covenant; and thou shalt come into the ark, thou, and thy sons, and thy wife, and thy sons’ wives with thee."
+      },
+      {
+        "chapter": 6,
+        "verse": 19,
+        "text": "And of every living thing of all flesh, two of every sort shalt thou bring into the ark, to keep them alive with thee; they shall be male and female."
+      }
+    ],
+    "previous": {
+      "reference": "Genesis 6:17",
+      "book": "Genesis",
+      "chapter": 6,
+      "verse": 17
+    },
+    "next": {
+      "reference": "Genesis 6:20",
+      "book": "Genesis",
+      "chapter": 6,
+      "verse": 20
+    }
   }
 }
 ```

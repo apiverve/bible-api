@@ -64,6 +64,45 @@ namespace APIVerve.API.Bible
 
         [JsonProperty("wordCount")]
         public long? WordCount { get; set; }
+
+        [JsonProperty("reference")]
+        public string Reference { get; set; }
+
+        [JsonProperty("passage")]
+        public Passage[] Passage { get; set; }
+
+        [JsonProperty("previous")]
+        public Next Previous { get; set; }
+
+        [JsonProperty("next")]
+        public Next Next { get; set; }
+    }
+
+    public partial class Next
+    {
+        [JsonProperty("reference")]
+        public string Reference { get; set; }
+
+        [JsonProperty("book")]
+        public string Book { get; set; }
+
+        [JsonProperty("chapter")]
+        public long? Chapter { get; set; }
+
+        [JsonProperty("verse")]
+        public long? Verse { get; set; }
+    }
+
+    public partial class Passage
+    {
+        [JsonProperty("chapter")]
+        public long? Chapter { get; set; }
+
+        [JsonProperty("verse")]
+        public long? Verse { get; set; }
+
+        [JsonProperty("text")]
+        public string Text { get; set; }
     }
 
     public partial class Premium

@@ -70,7 +70,8 @@ namespace APIVerve.API.Bible
             { "book", new ValidationRule { Type = "string", Required = true } },
             { "version", new ValidationRule { Type = "string", Required = true } },
             { "chapter", new ValidationRule { Type = "integer", Required = true, Min = 1 } },
-            { "verse", new ValidationRule { Type = "integer", Required = false, Min = 1 } }
+            { "verse", new ValidationRule { Type = "integer", Required = false, Min = 1 } },
+            { "verseEnd", new ValidationRule { Type = "integer", Required = false, Min = 1 } }
         };
 
         /// <summary>Format validation patterns</summary>
