@@ -10,7 +10,7 @@ module APIVerve
     #
     # @example Basic usage
     #   client = APIVerve::Bible::Client.new(api_key: "your_api_key")
-    #   response = client.execute({ book: "Genesis", version: "KJV", chapter: 5, verse: 17 })
+    #   response = client.execute({ book: "Genesis", version: "KJV", chapter: 5, verse: 17, verseEnd: 18 })
     #   puts response
     #
     # @see https://apiverve.com/marketplace/bible?utm_source=ruby&utm_medium=referral&utm_content=readme
@@ -19,7 +19,7 @@ module APIVerve
       DEFAULT_TIMEOUT = 30
 
       # Validation rules for parameters
-      VALIDATION_RULES = { 'book' => { type: 'string', required: true }, 'version' => { type: 'string', required: true }, 'chapter' => { type: 'integer', required: true, min: 1 }, 'verse' => { type: 'integer', required: false, min: 1 } }
+      VALIDATION_RULES = { 'book' => { type: 'string', required: true }, 'version' => { type: 'string', required: true }, 'chapter' => { type: 'integer', required: true, min: 1 }, 'verse' => { type: 'integer', required: false, min: 1 }, 'verseEnd' => { type: 'integer', required: false, min: 1 } }
 
       # Format validation patterns
       FORMAT_PATTERNS = {
