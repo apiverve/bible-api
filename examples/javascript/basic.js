@@ -18,7 +18,8 @@ async function callBibleAPI() {
             book: &#x27;Genesis&#x27;,
             version: &#x27;KJV&#x27;,
             chapter: 5,
-            verse: 17
+            verse: 17,
+            verseEnd: 18
         });
 
     const response = await fetch(`${API_URL}?${params}`, {

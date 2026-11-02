@@ -4,8 +4,9 @@ info:
   description: >-
     Bible retrieves scripture passages and verses across nine public-domain
     translations, including the modern Berean Standard Bible (BSB), KJV, ASV,
-    YLT and Darby. Supply a book, chapter, and optional verse number to get the
-    text with testament classification, word count, and chapter totals.
+    YLT and Darby. Look up a book, chapter and verse range or a written
+    reference like Jn 3:16-18, search for words and phrases, get a random verse
+    or the verse of the day, and step to the previous or next passage.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -29,7 +30,9 @@ paths:
           schema:
             type: string
           required: true
-          description: The name of the book in the bible (e.g., Genesis)
+          description: >-
+            The name of the book in the bible (e.g., Genesis). Abbreviations
+            such as Gen, Ps, 1 Cor or Jn are accepted
           example: Genesis
         - name: version
           in: query
@@ -52,6 +55,16 @@ paths:
           required: false
           description: The verse number in the chapter
           example: 17
+        - name: verseEnd
+          in: query
+          schema:
+            type: integer
+          required: false
+          description: >-
+            Last verse of a range starting at verse (e.g.,
+            verse=16&verseEnd=18). A value past the end of the chapter returns
+            the rest of it
+          example: 18
       responses:
         '200':
           description: Successful Response
@@ -76,18 +89,45 @@ paths:
                   text: >-
                     But with thee will I establish my covenant; and thou shalt
                     come into the ark, thou, and thy sons, and thy wife, and thy
-                    sons' wives with thee.
+                    sons’ wives with thee. And of every living thing of all
+                    flesh, two of every sort shalt thou bring into the ark, to
+                    keep them alive with thee; they shall be male and female.
                   book: Genesis
-                  abbr: gn
+                  abbr: Ge
                   chapter: 6
                   verses:
                     - 18
+                    - 19
                   version: KJV
                   testament: Old Testament
                   bookNumber: 1
                   totalChapters: 50
                   totalVersesInChapter: 22
-                  wordCount: 29
+                  wordCount: 58
+                  reference: Genesis 6:18-19
+                  passage:
+                    - chapter: 6
+                      verse: 18
+                      text: >-
+                        But with thee will I establish my covenant; and thou
+                        shalt come into the ark, thou, and thy sons, and thy
+                        wife, and thy sons’ wives with thee.
+                    - chapter: 6
+                      verse: 19
+                      text: >-
+                        And of every living thing of all flesh, two of every
+                        sort shalt thou bring into the ark, to keep them alive
+                        with thee; they shall be male and female.
+                  previous:
+                    reference: Genesis 6:17
+                    book: Genesis
+                    chapter: 6
+                    verse: 17
+                  next:
+                    reference: Genesis 6:20
+                    book: Genesis
+                    chapter: 6
+                    verse: 20
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':

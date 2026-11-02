@@ -18,6 +18,7 @@ public class BasicExample {
         parameters.put(&quot;version&quot;, &quot;KJV&quot;);
         parameters.put(&quot;chapter&quot;, 5);
         parameters.put(&quot;verse&quot;, 17);
+        parameters.put(&quot;verseEnd&quot;, 18);
 
             // Execute the API request
             APIResponse response = client.execute(parameters);

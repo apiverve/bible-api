@@ -18,7 +18,7 @@ def call_bible_api():
     """
     try:
         # Query parameters
-        params &#x3D; {&#x27;book&#x27;: &#x27;Genesis&#x27;, &#x27;version&#x27;: &#x27;KJV&#x27;, &#x27;chapter&#x27;: 5, &#x27;verse&#x27;: 17}
+        params &#x3D; {&#x27;book&#x27;: &#x27;Genesis&#x27;, &#x27;version&#x27;: &#x27;KJV&#x27;, &#x27;chapter&#x27;: 5, &#x27;verse&#x27;: 17, &#x27;verseEnd&#x27;: 18}
 
         headers = {
             'x-api-key': API_KEY
