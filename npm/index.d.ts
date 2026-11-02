@@ -36,6 +36,23 @@ declare module '@apiverve/bible' {
       totalChapters:        number | null;
       totalVersesInChapter: number | null;
       wordCount:            number | null;
+      reference:            null | string;
+      passage:              Passage[];
+      previous:             Next;
+      next:                 Next;
+  }
+  
+  interface Next {
+      reference: null | string;
+      book:      null | string;
+      chapter:   number | null;
+      verse:     number | null;
+  }
+  
+  interface Passage {
+      chapter: number | null;
+      verse:   number | null;
+      text:    null | string;
   }
 
   export default class bibleWrapper {

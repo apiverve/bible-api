@@ -18,7 +18,8 @@ var query = {
   book: "Genesis",
   version: "KJV",
   chapter: 5,
-  verse: 17
+  verse: 17,
+  verseEnd: 18
 };
 
 // Make the API request using callback
