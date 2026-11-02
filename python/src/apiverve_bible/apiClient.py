@@ -27,7 +27,8 @@ class BibleAPIClient:
         "book": {"type": "string", "required": True},
         "version": {"type": "string", "required": True},
         "chapter": {"type": "integer", "required": True, "min": 1},
-        "verse": {"type": "integer", "required": False, "min": 1}
+        "verse": {"type": "integer", "required": False, "min": 1},
+        "verseEnd": {"type": "integer", "required": False, "min": 1}
     }
 
     # Format validation patterns
