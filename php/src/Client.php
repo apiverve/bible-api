@@ -15,7 +15,7 @@ use APIVerve\Bible\Exceptions\ValidationException;
  * @example Basic usage
  * ```php
  * $client = new Client('your_api_key');
- * $response = $client->execute(['book' => 'Genesis', 'version' => 'KJV', 'chapter' => 5, 'verse' => 17]);
+ * $response = $client->execute(['book' => 'Genesis', 'version' => 'KJV', 'chapter' => 5, 'verse' => 17, 'verseEnd' => 18]);
  * print_r($response);
  * ```
  *
@@ -37,7 +37,8 @@ class Client
         'book' => ['type' => 'string', 'required' => true],
         'version' => ['type' => 'string', 'required' => true],
         'chapter' => ['type' => 'integer', 'required' => true, 'min' => 1],
-        'verse' => ['type' => 'integer', 'required' => false, 'min' => 1]
+        'verse' => ['type' => 'integer', 'required' => false, 'min' => 1],
+        'verseEnd' => ['type' => 'integer', 'required' => false, 'min' => 1]
     ];
 
     /**
