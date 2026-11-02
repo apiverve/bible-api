@@ -67,6 +67,10 @@ class BibleData {
   num? totalChapters;
   num? totalVersesInChapter;
   num? wordCount;
+  String? reference;
+  List<BibleDataPassageItem>? passage;
+  BibleDataPrevious? previous;
+  BibleDataNext? next;
 
   BibleData({
     this.text,
@@ -80,6 +84,10 @@ class BibleData {
     this.totalChapters,
     this.totalVersesInChapter,
     this.wordCount,
+    this.reference,
+    this.passage,
+    this.previous,
+    this.next,
   });
 
   factory BibleData.fromJson(Map<String, dynamic> json) => BibleData(
@@ -94,6 +102,70 @@ class BibleData {
       totalChapters: json['totalChapters'],
       totalVersesInChapter: json['totalVersesInChapter'],
       wordCount: json['wordCount'],
+      reference: json['reference'],
+      passage: (json['passage'] as List?)?.map((e) => BibleDataPassageItem.fromJson(e)).toList(),
+      previous: json['previous'] != null ? BibleDataPrevious.fromJson(json['previous']) : null,
+      next: json['next'] != null ? BibleDataNext.fromJson(json['next']) : null,
+    );
+}
+
+class BibleDataPassageItem {
+  num? chapter;
+  num? verse;
+  String? text;
+
+  BibleDataPassageItem({
+    this.chapter,
+    this.verse,
+    this.text,
+  });
+
+  factory BibleDataPassageItem.fromJson(Map<String, dynamic> json) => BibleDataPassageItem(
+      chapter: json['chapter'],
+      verse: json['verse'],
+      text: json['text'],
+    );
+}
+
+class BibleDataPrevious {
+  String? reference;
+  String? book;
+  num? chapter;
+  num? verse;
+
+  BibleDataPrevious({
+    this.reference,
+    this.book,
+    this.chapter,
+    this.verse,
+  });
+
+  factory BibleDataPrevious.fromJson(Map<String, dynamic> json) => BibleDataPrevious(
+      reference: json['reference'],
+      book: json['book'],
+      chapter: json['chapter'],
+      verse: json['verse'],
+    );
+}
+
+class BibleDataNext {
+  String? reference;
+  String? book;
+  num? chapter;
+  num? verse;
+
+  BibleDataNext({
+    this.reference,
+    this.book,
+    this.chapter,
+    this.verse,
+  });
+
+  factory BibleDataNext.fromJson(Map<String, dynamic> json) => BibleDataNext(
+      reference: json['reference'],
+      book: json['book'],
+      chapter: json['chapter'],
+      verse: json['verse'],
     );
 }
 
@@ -102,12 +174,14 @@ class BibleRequest {
   String version;
   int chapter;
   int? verse;
+  int? verseEnd;
 
   BibleRequest({
     required this.book,
     required this.version,
     required this.chapter,
     this.verse,
+    this.verseEnd,
   });
 
   Map<String, dynamic> toJson() => {
@@ -115,5 +189,6 @@ class BibleRequest {
       'version': version,
       'chapter': chapter,
       if (verse != null) 'verse': verse,
+      if (verseEnd != null) 'verseEnd': verseEnd,
     };
 }

@@ -49,10 +49,11 @@ final _formatPatterns = {
 /// For more information, visit: https://apiverve.com/marketplace/bible?utm_source=dart&utm_medium=referral&utm_content=readme
 ///
 /// Parameters:
-/// * [book] (required) - The name of the book in the bible (e.g., Genesis)
+/// * [book] (required) - The name of the book in the bible (e.g., Genesis). Abbreviations such as Gen, Ps, 1 Cor or Jn are accepted
 /// * [version] (required) - The Bible translation version
 /// * [chapter] (required) - The chapter number in the book [min: 1]
 /// * [verse] - The verse number in the chapter [min: 1]
+/// * [verseEnd] - Last verse of a range starting at verse (e.g., verse=16&verseEnd=18). A value past the end of the chapter returns the rest of it [min: 1]
 class BibleClient {
   final String apiKey;
   final String baseUrl;
@@ -64,6 +65,7 @@ class BibleClient {
     'version': ValidationRule(type: 'string', required: true),
     'chapter': ValidationRule(type: 'integer', required: true, min: 1),
     'verse': ValidationRule(type: 'integer', required: false, min: 1),
+    'verseEnd': ValidationRule(type: 'integer', required: false, min: 1),
   };
 
   BibleClient(this.apiKey, {
